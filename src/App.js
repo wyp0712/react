@@ -1,6 +1,25 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+// import ajax from './util/ajax/ajax';
+
+
+function GetData() {
+  axios.get('/msg').then(res => {
+    console.log(res, 'res')
+    if (res.status === 200) {
+      console.log(res.data, 'res')
+    }
+  })
+  // ajax({
+  //   url: '/msg',
+  //   method: 'get'
+  // }).then(res => {
+  //   console.log(res)
+  // })
+}
+GetData()
 
 class App extends Component {
   render() {
